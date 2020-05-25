@@ -1,14 +1,14 @@
-// const pgConnection = process.env.DATABASE_URL || {
-//   database: 'pg databasenamehere',    //postgres by default
-//   user:     'pg usernamehere',        //postgres by default
-//   password: 'pg passhere'             //blank by default
-// };
+const pgConnection = process.env.DATABASE_URL || {
+  database: 'pg databasenamehere',    //postgres by default
+  user:     'pg usernamehere',        //postgres by default
+  password: 'pg passhere'             //blank by default
+};
 
 module.exports = {
   development: {
     client: "sqlite3",
     connection: {
-      filename: "./data/databasenamehere.db3",
+      filename: "./data/pintereach.db3",
     },
     useNullAsDefault: true,
     pool : {
