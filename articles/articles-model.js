@@ -44,7 +44,7 @@ function update(changes, id) {
     .update(changes)
     .then(success => {
       if(success) {
-        return findById(id)
+        return findArticleById(id)
       } else {
         return res.status(500).json({ message: 'Failed to update article' });
       }
