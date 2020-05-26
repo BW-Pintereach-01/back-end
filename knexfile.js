@@ -8,7 +8,7 @@ module.exports = {
   development: {
     client: "sqlite3",
     connection: {
-      filename: "./data/databasenamehere.db3",
+      filename: "./data/pintereach.db3",
     },
     useNullAsDefault: true,
     pool : {
