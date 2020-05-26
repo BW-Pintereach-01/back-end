@@ -9,9 +9,9 @@ exports.seed = function(knex) {
           users_id: 1,
           link: 'https://theconversation.com/when-halloween-became-americas-most-dangerous-holiday-123132',
           title:'When Halloween became America\'s most dangerous holiday',
-          author:'Pat Dal',
-          category_id: 1
+          author:'Pat Dal'
         }
+        
       ]);
     });
 };
