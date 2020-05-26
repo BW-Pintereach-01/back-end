@@ -47,7 +47,7 @@ router.get('/user/:id', (req, res) => {
   });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', validateArticle, (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
@@ -66,5 +66,22 @@ router.put('/:id', (req, res) => {
     res.status(500).json({ message: 'Failed to update article', err });
   });
 });
+
+function validateArticle(req, res, next) {
+  const article = req.body;
+  if (Object.keys(article).length > 0) {
+    if(article.link && article.author) {
+      next();
+    } else {
+      res.status(400).json({
+        message: 'Missing required field, please enter link and author'
+      })
+    }
+  } else {
+    res.status(400).json({
+      message: 'Missing article data'
+    })
+  }
+}
 
 module.exports = router;
