@@ -31,3 +31,23 @@ REQUIRED FIELDS
 
 - username (string)
 - password (string)
+
+GET ARTICLE
+-get
+`https://pintereach-1.herokuapp.com/api/articles/:id` userID
+
+EDIT ARTICLE
+-Edit
+`https://pintereach-1.herokuapp.com/api/articles/:id` articleID
+
+ADD ARTICLE
+-Add
+"https://pintereach-1.herokuapp.com/api/articles/"
+REQUIRED
+-author (string)
+-link (string)
+
+
+DELETE ARTICLE
+-Delete
+`https://pintereach-1.herokuapp.com/api/articles/:id` articleID
