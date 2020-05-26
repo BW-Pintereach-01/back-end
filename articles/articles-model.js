@@ -2,7 +2,8 @@ const db = require('./../data/dbConfig');
 
 module.exports = {
     insert,
-    remove
+    remove,
+    
     
 }
 
@@ -17,3 +18,4 @@ function remove(id) {
         .where('id', Number(id))
         .del();
 }
+

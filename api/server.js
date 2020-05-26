@@ -14,7 +14,7 @@ server.use(cors());
 server.use(express.json());
 
 server.use('/api/auth', authRouter);
-server.use('/api/articles',  articlesRouter);
+server.use('/api/articles', authenticate, articlesRouter);
 server.use('/api/users', usersRouter);
 
 server.get('/', (req, res) => {
