@@ -31,3 +31,58 @@ REQUIRED FIELDS
 
 - username (string)
 - password (string)
+
+GET ALL ARTICLES
+
+- GET `https://pintereach-1.herokuapp.com/api/articles`
+
+- AUTHORIZATION: token
+
+GET ARTICLE BY ID
+
+- GET `https://pintereach-1.herokuapp.com/api/articles/:id` (article ID)
+
+Headers
+
+- AUTHORIZATION: token
+
+GET ARTICLES FOR USER
+
+-GET `https://pintereach-1.herokuapp.com/api/articles/user/:id` (user ID)
+
+Headers
+
+- AUTHORIZATION: token
+
+EDIT ARTICLE
+
+- PUT `https://pintereach-1.herokuapp.com/api/articles/:id` (article ID)
+
+REQUIRED
+
+- Author (string)
+- Link (string)
+
+Headers
+
+- AUTHORIZATION: token
+
+ADD ARTICLE
+
+- POST `https://pintereach-1.herokuapp.com/api/articles`
+
+REQUIRED
+-author (string)
+-link (string)
+
+Headers
+
+- AUTHORIZATION: token
+
+DELETE ARTICLE
+
+- DELETE `https://pintereach-1.herokuapp.com/api/articles/:id` (articleID)
+
+Headers
+
+- AUTHORIZATION: token
