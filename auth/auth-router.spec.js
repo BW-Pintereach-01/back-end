@@ -17,13 +17,13 @@ describe('auth-router', () => {
                     expect(res.status).toBe(201)
             })
         })
-        // it("should return a 500 error for inputing an incomplete password", () => {
-        //     return request(server)
-        //         .post("/api/auth/register")
-        //         .send({ username: 'testing', password: 2 })
-        //         .then(res => {
-        //         expect(res.status).toBe(500);
-        //     });
-        // });
+        it("should return a 400 error for not inputting bad password", () => {
+            return request(server)
+                .post("/api/auth/register")
+                .send({ username: 'testing', password: 2 })
+                .then(res => {
+                expect(res.status).toBe(400);
+            });
+        });
     })
 })

@@ -16,11 +16,11 @@ describe('server', function() {
                 })
         })
 
-        // it('should return JSON', function() {
-        //     return request(server).get('/')
-        //         .then(res => {
-        //             expect(res.type).toMatch(/json/i)
-        //         })
-        // })
+        it('should return JSON', function() {
+            return request(server).get('/')
+                .then(res => {
+                    expect(res.type).toMatch(/json/i)
+                })
+        })
     })
 })
