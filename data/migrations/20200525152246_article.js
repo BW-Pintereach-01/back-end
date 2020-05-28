@@ -5,7 +5,7 @@ exports.up = function(knex) {
     tbl.string('link', 255).notNullable();
     tbl.string('title', 225);
     tbl.string('author', 225).notNullable();
-    tbl.string('category', 255)
+    tbl.string('category', 255);
     tbl.integer('users_id')
       .notNullable()
       .unsigned()
