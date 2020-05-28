@@ -42,14 +42,14 @@ function remove(id) {
 }
 
 function update(changes, id) {
-  return db('articles')
+  return db('users')
     .where({ id })
     .update(changes)
     .then(success => {
       if(success) {
-        return findArticleById(id)
+        return findById(id)
       } else {
-        return res.status(500).json({ message: 'Failed to update article' });
+        return res.status(500).json({ message: 'Failed to update user' });
       }
     })
 }
