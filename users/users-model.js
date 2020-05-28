@@ -5,6 +5,8 @@ module.exports = {
   find,
   findBy,
   findById,
+  remove,
+  update
 };
 
 function find() {
@@ -31,4 +33,23 @@ async function add(user) {
 
 function findById(id) {
   return db("users").where({ id }).first();
+}
+
+function remove(id) {
+  return db('users')
+      .where('id', Number(id))
+      .del();
+}
+
+function update(changes, id) {
+  return db('users')
+    .where({ id })
+    .update(changes)
+    .then(success => {
+      if(success) {
+        return findById(id)
+      } else {
+        return res.status(500).json({ message: 'Failed to update user' });
+      }
+    })
 }

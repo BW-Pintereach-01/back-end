@@ -22,28 +22,29 @@ function remove(id) {
 }
 
 function update(changes, id) {
-    return db('articles')
-      .where({ id })
-      .update(changes)
-      .then(success => {
-        if(success) {
-          return findArticleById(id)
-        } else {
-          return res.status(500).json({ message: 'Failed to update article' });
-        }
-      })
-  }
+  return db('articles')
+    .where({ id })
+    .update(changes)
+    .then(success => {
+      if(success) {
+        return findArticleById(id)
+      } else {
+        return res.status(500).json({ message: 'Failed to update article' });
+      }
+    })
+}
 
-  function findAllArticles() {
-    return db('articles')
-  }
-  function findArticleById(id) {
-    return db('articles').where({ id }).first();
-  }
-  function findUserArticles(id) {
-    return db('users as u')
-      .join('articles as a', 'a.users_id', '=', 'u.id')
-      .select('a.link', 'a.title', 'a.author', 'a.category')
-      .distinct('a.title')
-      .where('a.users_id', '=', id)
-  }
+function findAllArticles() {
+  return db('articles')
+}
+
+function findArticleById(id) {
+  return db('articles').where({ id }).first();
+}
+
+function findUserArticles(id) {
+  return db('articles as a')
+    .join('users as u', 'a.users_id', '=', 'u.id')
+    .select('a.link', 'a.title', 'a.author', 'a.category')
+    .where('a.users_id', '=', id)
+}
