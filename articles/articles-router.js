@@ -3,8 +3,8 @@ const Articles = require('./articles-model.js');
 // const restrict = require('../auth/auth-middleware.js');
 
 router.post('/',validateArticle,(req,res) => {
-    const {users_id, title, author, link,} = req.body;
-    Articles.insert({users_id, title, author, link,})
+    const {users_id, title, author, link, category} = req.body;
+    Articles.insert({users_id, title, author, link, category})
         .then(article => res.status(200).json(article))
         .catch(err => {
             console.log(err)
