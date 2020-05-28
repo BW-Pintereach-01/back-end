@@ -43,9 +43,8 @@ function findArticleById(id) {
 }
 
 function findUserArticles(id) {
-  return db('users as u')
-    .join('articles as a', 'a.users_id', '=', 'u.id')
+  return db('articles as a')
+    .join('users as u', 'a.users_id', '=', 'u.id')
     .select('a.link', 'a.title', 'a.author', 'a.category')
-    .distinct('a.title')
     .where('a.users_id', '=', id)
 }

@@ -59,10 +59,10 @@ router.get('/:id', (req, res) => {
 router.get('/user/:id', (req, res) => {
   const { id } = req.params;
   Articles.findUserArticles(id)
-  .then(([articles]) => {
-    if (articles) {
-      const articleArr = []
-      res.status(200).json({ articles: [...articleArr, articles] });
+  .then(articles => {
+    const [check] = articles
+    if (check) {
+      res.status(200).json(articles);
     } else {
       res.status(404).json({ message: 'User has no articles in the Database' })
     }
