@@ -5,7 +5,10 @@ const db = require('../data/dbConfig')
 beforeEach(async () => {
   return db.migrate.rollback()
     .then(() => db.migrate.latest())
+<<<<<<< HEAD
     .then(() => db.seed.run())
+=======
+>>>>>>> added some tests for login and register, fixed issues with user routes
 });
 
 test('POST /api/users/register to be successful', async () => {
@@ -32,6 +35,7 @@ test('POST /api/users/login to be successful', async () => {
   // console.log(res.body)
 })
 
+<<<<<<< HEAD
 test('Get all users', async () => {
   const res = await request(server)
     .get('/api/users')
@@ -65,3 +69,5 @@ test('Delete user to not exist in db after delete', async () => {
       expect(response.body).toHaveProperty('message', 'Could not find user with given id.')
     })
 })
+=======
+>>>>>>> added some tests for login and register, fixed issues with user routes
